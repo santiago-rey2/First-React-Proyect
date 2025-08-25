@@ -1,0 +1,481 @@
+/* Bootstrap se encarga del responsive grid, solo mantenemos estilos específicos */
+.menu-section {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  background-color: var(--wp--preset--color--theme-4);
+  border: none;
+}
+
+.menu-section.special {
+  background-color: var(--wp--preset--color--theme-4);
+  border: none;
+  border-radius: 0;
+  margin: 3rem 0;
+  padding: 2.5rem 0;
+}
+
+.section-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+  position: relative;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+/* Línea decorativa debajo del título */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--wp--preset--color--theme-2), #daa760);
+  border-radius: 2px;
+}
+
+/* Eliminar decorador del primer título (Sugerencias Del Día) */
+.menu-section.special .section-title::after {
+  display: none;
+}
+
+/* Ocultar línea decorativa base para títulos con imagen en desktop */
+@media (min-width: 769px) {
+  .title-container:has(.divider-image) .section-title::after {
+    display: none;
+  }
+}
+
+/* Título sobre imagen para desktop - exactamente como hero */
+@media (min-width: 769px) {
+  .title-container .section-title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 800;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    white-space: nowrap;
+    padding: 2rem 12.5% 50px 12.5%;
+    width: 75%;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: var(--wp--preset--color--theme-4);
+    border-radius: 8px 8px 0 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+  }
+  
+  /* Línea decorativa específica para títulos con imagen */
+  .title-container:has(.divider-image) .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 25%);
+    height: 3px;
+    background: linear-gradient(90deg, var(--wp--preset--color--theme-2), #daa760);
+    border-radius: 2px;
+    z-index: 3;
+  }
+  
+  /* Para secciones sin imagen, título normal */
+  .title-container:not(:has(.divider-image)) .section-title {
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    padding: 0;
+    background-color: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    border-radius: 0;
+    max-width: none;
+    width: auto;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+    white-space: nowrap;
+    text-align: center;
+  }
+}
+
+/* Contenedor para el efecto hero-like */
+.title-container {
+  position: relative;
+  margin-bottom: 3rem;
+  overflow: visible;
+  min-height: auto;
+}
+
+/* Imagen divisora para desktop/tablet - exactamente como hero */
+.divider-image.desktop-only {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  height: 600px;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Overlay transparente como en hero */
+.divider-image.desktop-only::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Ocultar la imagen img y usar background-image */
+.divider-image.desktop-only img {
+  display: none;
+}
+
+/* Imagen divisora para móvil */
+.divider-image.mobile-only {
+  display: none;
+  width: 100vw;
+  height: 300px;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.divider-image.mobile-only img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Clases de utilidad responsive */
+.desktop-only {
+  display: block;
+}
+
+.mobile-only {
+  display: none;
+}
+
+.section-note {
+  font-style: italic;
+  color: var(--wp--preset--color--theme-3);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.menu-subsection {
+  margin: 3rem 0;
+  padding: 2rem 0;
+}
+
+.menu-subsection:last-child {
+  border-bottom: none;
+}
+
+.subsection-title {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  position: relative;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.subsection-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--wp--preset--color--theme-2);
+  margin: 1rem auto;
+  border: none;
+}
+
+/* Responsive adjustments for titles */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1rem;
+    overflow-x: visible;
+  }
+  
+  .menu-section {
+    overflow-x: visible;
+  }
+  
+  /* Mostrar imagen móvil, ocultar desktop */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  .mobile-only {
+    display: block !important;
+  }
+  
+  /* Asegurar que no hay overflow horizontal */
+  .divider-image.mobile-only {
+    width: 100vw !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    max-width: none !important;
+    height: 300px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    display: block !important;
+  }
+  
+  .divider-image.mobile-only img {
+    width: 100% !important;
+    height: 300px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+  
+  /* Títulos específicos para móvil */
+  .section-title.mobile-only {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 2rem auto !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    z-index: 2 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
+    padding: 0 1rem !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  
+  /* Título para secciones sin imagen en móvil */
+  .title-container .section-title:not(.desktop-only):not(.mobile-only) {
+    position: relative !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    margin: 2rem auto !important;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    z-index: 2 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
+    padding: 0 1rem !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    line-height: 1.2 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+  
+  /* Decorador más pequeño para móvil */
+  .section-title::after {
+    bottom: -0.5rem !important;
+    width: 60% !important;
+    height: 2px !important;
+  }
+  
+  .section-title.mobile-only::after {
+    bottom: -0.5rem !important;
+    width: 50% !important;
+    height: 2px !important;
+  }
+  
+  .title-container .section-title:not(.desktop-only):not(.mobile-only)::after {
+    bottom: -0.5rem !important;
+    width: 50% !important;
+    height: 2px !important;
+  }
+  
+  /* Decorador más pequeño para subtítulos en móvil */
+  .subsection-title::after {
+    width: 60px !important;
+    height: 2px !important;
+    margin: 0.5rem auto !important;
+  }
+  
+  .section-title {
+    box-sizing: border-box !important;
+    color: rgb(248, 248, 248) !important;
+    display: block !important;
+    font-family: Raleway !important;
+    font-size: 40px !important;
+    font-style: normal !important;
+    font-weight: 800 !important;
+    height: 80px !important;
+    letter-spacing: normal !important;
+    line-height: 40px !important;
+    margin-block-end: 10px !important;
+    margin-block-start: 5px !important;
+    margin-bottom: 10px !important;
+    margin-inline-end: 0px !important;
+    margin-inline-start: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 5px !important;
+    overflow-wrap: break-word !important;
+    position: relative !important;
+    text-align: center !important;
+    text-decoration-color: rgb(248, 248, 248) !important;
+    text-decoration-line: none !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: auto !important;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;
+    text-transform: capitalize !important;
+    transition-behavior: normal, normal, normal, normal, normal, normal !important;
+    transition-delay: 0s, 0s, 0s, 0s, 0s, 0s !important;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s !important;
+    transition-property: background-color, border, border-radius, box-shadow, color, height !important;
+    transition-timing-function: ease, ease, ease, ease, ease, ease !important;
+    unicode-bidi: isolate !important;
+    width: 350px !important;
+    word-break: break-word !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin: 5px auto 10px auto !important;
+  }
+  
+  .subsection-title {
+    box-sizing: border-box !important;
+    color: rgb(248, 248, 248) !important;
+    display: block !important;
+    font-family: Raleway !important;
+    font-size: 32px !important;
+    font-style: normal !important;
+    font-weight: 700 !important;
+    height: 60px !important;
+    letter-spacing: normal !important;
+    line-height: 32px !important;
+    margin-block-end: 8px !important;
+    margin-block-start: 4px !important;
+    margin-bottom: 8px !important;
+    margin-inline-end: 0px !important;
+    margin-inline-start: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 4px !important;
+    overflow-wrap: break-word !important;
+    position: relative !important;
+    text-align: center !important;
+    text-decoration-color: rgb(248, 248, 248) !important;
+    text-decoration-line: none !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: auto !important;
+    text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;
+    text-transform: capitalize !important;
+    transition-behavior: normal, normal, normal, normal, normal, normal !important;
+    transition-delay: 0s, 0s, 0s, 0s, 0s, 0s !important;
+    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s !important;
+    transition-property: background-color, border, border-radius, box-shadow, color, height !important;
+    transition-timing-function: ease, ease, ease, ease, ease, ease !important;
+    unicode-bidi: isolate !important;
+    width: 280px !important;
+    word-break: break-word !important;
+    -webkit-font-smoothing: antialiased !important;
+    margin: 4px auto 8px auto !important;
+  }
+  
+  .menu-section {
+    margin: 1.5rem 0;
+    padding: 1.5rem 0;
+  }
+  
+  .menu-section.special {
+    margin: 2rem 0;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 32px !important;
+    height: 64px !important;
+    line-height: 32px !important;
+    width: 280px !important;
+  }
+  
+  .subsection-title {
+    font-size: 24px !important;
+    height: 48px !important;
+    line-height: 24px !important;
+    width: 240px !important;
+  }
+}

@@ -1,0 +1,88 @@
+.allergen-guide {
+  background-color: var(--wp--preset--color--theme-4);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border: none;
+}
+
+.guide-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.guide-title {
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+.allergen-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--wp--preset--color--theme-4);
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  transition: none;
+  min-width: 180px;
+  white-space: nowrap;
+}
+
+.allergen-item:hover {
+  transform: none;
+  box-shadow: none;
+  border: none;
+}
+
+.allergen-item .allergen-icon {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
+}
+
+.allergen-name {
+  font-weight: 500;
+  color: var(--wp--preset--color--theme-3);
+  font-size: 1rem;
+  text-align: left;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .guide-container {
+    padding: 0 1rem;
+  }
+  
+  .guide-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .allergen-item {
+    padding: 1.2rem;
+    gap: 1rem;
+    min-width: 150px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .allergen-item .allergen-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .allergen-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+  }
+}

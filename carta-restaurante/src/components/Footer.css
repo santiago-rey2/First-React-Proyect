@@ -1,0 +1,96 @@
+.footer {
+  background-color: var(--wp--preset--color--theme-4);
+  color: var(--wp--preset--color--theme-3);
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+  border: none;
+}
+
+.footer-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.restaurant-info h3 {
+  color: var(--wp--preset--color--theme-2);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.restaurant-info p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: var(--wp--preset--color--theme-3);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  min-width: 24px;
+  color: var(--wp--preset--color--theme-2);
+}
+
+.contact-item p {
+  margin: 0.25rem 0;
+  color: var(--wp--preset--color--theme-3);
+}
+
+.hours-info h4 {
+  color: var(--wp--preset--color--theme-2);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hours-schedule p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
+  color: var(--wp--preset--color--theme-3);
+}
+
+.hours-schedule strong {
+  color: var(--wp--preset--color--theme-5);
+}
+
+.footer-bottom {
+  border: none;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: var(--wp--preset--color--theme-3);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .contact-item {
+    align-items: center;
+  }
+}

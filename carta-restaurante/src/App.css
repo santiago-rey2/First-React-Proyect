@@ -1,0 +1,173 @@
+.app {
+  min-height: 100vh;
+  background-color: var(--wp--preset--color--theme-4);
+  color: var(--wp--preset--color--theme-3);
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.main-content {
+  min-height: calc(100vh - 200px);
+  padding: 2rem 0;
+  background-color: var(--wp--preset--color--theme-4);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section {
+  background-image: url('https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  height: 590px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.menu-intro {
+  background: transparent;
+  color: var(--wp--preset--color--theme-3);
+  text-align: center;
+  padding: 2rem 2rem 3rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  max-width: 1140px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.menu-intro h1 {
+  color: rgb(248, 248, 248);
+  font-family: Raleway;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 6.4px;
+  line-height: 96px;
+  margin: 8px 0 16px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  max-width: 100%;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .menu-intro {
+    padding: 3.5rem 1.5rem 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll;
+    height: auto;
+    min-height: 60vh;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .menu-intro {
+    padding: 3rem 1rem 2rem;
+    max-width: 100%;
+  }
+  
+  .menu-intro h1 {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    word-spacing: 0.15em;
+  }
+  
+  .main-content {
+    padding: 1rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: auto;
+    min-height: 50vh;
+  }
+
+  .menu-intro {
+    padding: 2rem 0.5rem 1.5rem;
+  }
+  
+  .menu-intro h1 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    word-spacing: 0.1em;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-section {
+    height: auto;
+    min-height: 40vh;
+    max-height: 50vh;
+  }
+  
+  .menu-intro {
+    padding: 1.5rem 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu-intro {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .menu-intro {
+    max-width: 1320px;
+  }
+}
