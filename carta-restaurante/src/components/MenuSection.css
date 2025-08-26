@@ -175,17 +175,11 @@
   display: none;
   width: 100vw;
   height: 250px;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-bottom: 2rem;
   overflow: hidden;
   position: relative;
-  /* Escape completo del contenedor padre */
-  transform: translateX(-50%);
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 2rem;
   box-sizing: border-box;
 }
 
@@ -195,7 +189,6 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  /* Asegurar que la imagen ocupe todo el viewport */
   max-width: none;
   margin: 0;
   padding: 0;
@@ -284,20 +277,23 @@
     display: block !important;
   }
   
-  /* Asegurar que no hay overflow horizontal - Técnica Radical */
+  /* Asegurar posicionamiento correcto en todo el rango móvil */
+  .title-container {
+    position: relative !important;
+    overflow: visible !important;
+  }
+  
+  /* Asegurar que no hay overflow horizontal - Técnica Mejorada */
   .divider-image.mobile-only {
     width: 100vw !important;
     height: 250px !important;
     overflow: hidden !important;
     display: block !important;
-    /* Técnica radical: position absolute para escapar completamente */
-    position: absolute !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    position: relative !important;
+    /* Técnica mejorada para escapar del container sin absolute */
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
     margin-bottom: 2rem !important;
-    transform: none !important;
     max-width: none !important;
     box-sizing: border-box !important;
     z-index: 1 !important;
@@ -313,8 +309,6 @@
     margin: 0 !important;
     padding: 0 !important;
     position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
   }
   
   /* Títulos específicos para móvil */
@@ -347,8 +341,6 @@
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
     white-space: normal !important;
-    /* Espacio adicional para la imagen absoluta */
-    margin-top: 270px !important;
   }
   
   /* Título para secciones sin imagen en móvil */
@@ -440,9 +432,24 @@
 
 @media (max-width: 480px) {
   .section-container {
-    padding: 0;
+    padding: 0 !important;
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0 !important;
+  }
+  
+  .menu-section {
+    padding: 1.5rem 0 !important;
+    margin: 0 !important;
+    overflow-x: visible !important;
+  }
+  
+  /* Asegurar que container-fluid no interfiera */
+  .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin: 0 !important;
+    overflow-x: visible !important;
   }
   
   .section-title {
@@ -455,5 +462,54 @@
     font-size: 20px !important;
     line-height: 1.4 !important;
     max-width: 240px !important;
+  }
+  
+  /* Imagen de sección específica para móvil pequeño */
+  .divider-image.mobile-only {
+    position: relative !important;
+    width: 100vw !important;
+    height: 250px !important;
+    overflow: hidden !important;
+    display: block !important;
+    /* Técnica más agresiva para pantallas pequeñas */
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-bottom: 2rem !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    z-index: 1 !important;
+  }
+  
+  .divider-image.mobile-only img {
+    width: 100vw !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+
+/* Media query específico para tabletas (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .divider-image.mobile-only {
+    position: relative !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    margin-bottom: 2rem !important;
+    z-index: 1 !important;
+  }
+  
+  .section-title.mobile-only {
+    margin: 2rem auto !important;
+    position: relative !important;
+    z-index: 2 !important;
   }
 }
