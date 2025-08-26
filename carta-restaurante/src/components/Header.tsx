@@ -28,10 +28,10 @@ const Header = () => {
   ]
 
   const idiomaItems: DropdownItem[] = [
-    { href: "#es", label: "Español" },
-    { href: "#en", label: "English" },
-    { href: "#fr", label: "Français" },
-    { href: "#pt", label: "Português" }
+    { href: "#es", label: "Español", flagCode: "es" },
+    { href: "#en", label: "English", flagCode: "en" },
+    { href: "#fr", label: "Français", flagCode: "fr" },
+    { href: "#pt", label: "Português", flagCode: "pt" }
   ]
 
   const toggleMenu = () => {
@@ -72,6 +72,7 @@ const Header = () => {
             />
             <DropdownMenu
               title="ESPAÑOL"
+              titleFlagCode="es"
               items={idiomaItems}
               isActive={isDropdownActive('idioma')}
               onToggle={() => handleDropdownToggle('idioma')}

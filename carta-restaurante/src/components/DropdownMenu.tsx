@@ -1,13 +1,16 @@
 import './DropdownMenu.css'
+import Flag from './FlagIcons'
 
 export interface DropdownItem {
   href: string
   label: string
+  flagCode?: string
 }
 
 export interface DropdownMenuProps {
   title: string
   items: DropdownItem[]
+  titleFlagCode?: string
   isActive?: boolean
   onToggle?: () => void
   onClose?: () => void
@@ -17,6 +20,7 @@ export interface DropdownMenuProps {
 const DropdownMenu = ({ 
   title, 
   items, 
+  titleFlagCode,
   isActive = false, 
   onToggle, 
   onClose,
@@ -38,6 +42,7 @@ const DropdownMenu = ({
         onMouseEnter={onToggle}
         onClick={onToggle}
       >
+        {titleFlagCode && <Flag country={titleFlagCode} className="flag-icon-btn" />}
         {title}
         <span className="dropdown-arrow">▼</span>
       </button>
@@ -48,6 +53,7 @@ const DropdownMenu = ({
             href={item.href} 
             onClick={() => handleItemClick(item.href)}
           >
+            {item.flagCode && <Flag country={item.flagCode} className="flag-icon-menu" />}
             {item.label}
           </a>
         ))}

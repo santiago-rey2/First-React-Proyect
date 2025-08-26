@@ -26,6 +26,37 @@
   gap: 0.5rem;
 }
 
+.dropdown-toggle .flag-icon {
+  font-size: 1rem;
+  margin-right: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Estilos específicos para iconos de bandera SVG */
+.flag-icon-btn {
+  width: 20px;
+  height: 15px;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.flag-icon-menu {
+  width: 24px;
+  height: 18px;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Eliminar cualquier pseudoelemento ::after no deseado */
+.dropdown-toggle::after {
+  display: none !important;
+  content: none !important;
+}
+
 /* Estilo específico para la flecha - SOLO en botones principales */
 .dropdown-toggle .dropdown-arrow {
   font-size: 0.8rem;
@@ -65,7 +96,9 @@
 .dropdown-menu a {
   background-image: none;
   list-style: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.8rem 1.2rem;
   color: #ffffff;
   text-decoration: none;
@@ -78,14 +111,8 @@
 }
 
 .dropdown-menu a::after,
-.dropdown-menu a::before {
-  display: none;
-}
-
-.dropdown-menu a .dropdown-arrow {
-  display: none;
-}
-
+.dropdown-menu a::before,
+.dropdown-menu a .dropdown-arrow,
 .dropdown-menu li::before,
 .dropdown-menu li::after {
   display: none;
@@ -102,6 +129,13 @@
 }
 
 /* Responsive */
+@media (min-width: 768px) {
+  .dropdown-toggle {
+    font-family: 'Inter';
+    line-height: 21px;
+  }
+}
+
 @media (min-width: 769px) {
   .dropdown-toggle {
     width: 180px;
@@ -109,6 +143,8 @@
     margin: 0 7px;
     padding: 15px;
     font-size: 14px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 21px;
     letter-spacing: 1.12px;
   }
   
