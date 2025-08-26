@@ -1,9 +1,7 @@
 import './App.css'
-import Header from './components/Header'
-import MenuSection from './components/MenuSection'
-import AllergenGuide from './components/AllergenGuide'
-import Footer from './components/Footer'
-import ScrollToTop from './components/ScrollToTop'
+import { Header, Footer } from './components/Layout'
+import { MenuSection, AllergenGuide } from './components/Menu'
+import { ScrollToTop } from './components/UI'
 
 // Datos del menú
 const menuData = {
