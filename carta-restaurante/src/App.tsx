@@ -3,6 +3,7 @@ import Header from './components/Header'
 import MenuSection from './components/MenuSection'
 import AllergenGuide from './components/AllergenGuide'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 // Datos del menú
 const menuData = {
@@ -182,6 +183,9 @@ function App() {
       </main>
 
       <Footer />
+      
+      {/* Botón flotante para volver al inicio */}
+      <ScrollToTop />
     </div>
   )
 }
