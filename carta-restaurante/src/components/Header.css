@@ -216,7 +216,7 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  z-index: 9999;
+  z-index: 1;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -344,55 +344,13 @@
 
 /* Responsive */
 @media (min-width: 769px) {
-  /* Estilos específicos para desktop y tablet */
   .dropdown-toggle {
-    align-items: center;
-    box-shadow: none;
-    box-sizing: border-box;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    display: flex;
-    font-family: Inter;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    height: 60px;
-    justify-content: center;
-    letter-spacing: 1.12px;
-    line-height: 21px;
-    list-style-image: none;
-    list-style-position: outside;
-    list-style-type: none;
-    margin-bottom: 0px;
-    margin-left: 7px;
-    margin-right: 7px;
-    margin-top: 0px;
-    overflow-wrap: normal;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px;
-    text-align: left;
-    text-decoration-color: rgb(255, 255, 255);
-    text-decoration-line: none;
-    text-decoration-style: solid;
-    text-decoration-thickness: auto;
-    text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
-    text-transform: uppercase;
-    transition-behavior: normal;
-    transition-delay: 0s;
-    transition-duration: 0.4s;
-    transition-property: all;
-    transition-timing-function: ease;
     width: 180px;
-    word-break: normal;
-    -webkit-font-smoothing: antialiased;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-    gap: 0.5rem;
+    height: 60px;
+    margin: 0 7px;
+    padding: 15px;
+    font-size: 14px;
+    letter-spacing: 1.12px;
   }
   
   .dropdown-toggle:hover {

@@ -388,83 +388,21 @@
   }
   
   .section-title {
-    box-sizing: border-box !important;
-    color: rgb(248, 248, 248) !important;
-    display: block !important;
-    font-family: Raleway !important;
     font-size: 40px !important;
-    font-style: normal !important;
-    font-weight: 800 !important;
-    height: 80px !important;
-    letter-spacing: normal !important;
-    line-height: 40px !important;
-    margin-block-end: 10px !important;
-    margin-block-start: 5px !important;
-    margin-bottom: 10px !important;
-    margin-inline-end: 0px !important;
-    margin-inline-start: 0px !important;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    margin-top: 5px !important;
-    overflow-wrap: break-word !important;
-    position: relative !important;
-    text-align: center !important;
-    text-decoration-color: rgb(248, 248, 248) !important;
-    text-decoration-line: none !important;
-    text-decoration-style: solid !important;
-    text-decoration-thickness: auto !important;
-    text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;
-    text-transform: capitalize !important;
-    transition-behavior: normal, normal, normal, normal, normal, normal !important;
-    transition-delay: 0s, 0s, 0s, 0s, 0s, 0s !important;
-    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s !important;
-    transition-property: background-color, border, border-radius, box-shadow, color, height !important;
-    transition-timing-function: ease, ease, ease, ease, ease, ease !important;
-    unicode-bidi: isolate !important;
-    width: 350px !important;
-    word-break: break-word !important;
-    -webkit-font-smoothing: antialiased !important;
-    margin: 5px auto 10px auto !important;
+    margin: 2rem auto !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
+    white-space: normal !important;
+    color: #ffffff !important;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9) !important;
   }
   
   .subsection-title {
-    box-sizing: border-box !important;
-    color: rgb(248, 248, 248) !important;
-    display: block !important;
-    font-family: Raleway !important;
     font-size: 20px !important;
-    font-style: normal !important;
-    font-weight: 500 !important;
-    height: 60px !important;
     letter-spacing: 6.8px !important;
-    line-height: 32px !important;
-    margin-block-end: 8px !important;
-    margin-block-start: 4px !important;
-    margin-bottom: 8px !important;
-    margin-inline-end: 0px !important;
-    margin-inline-start: 0px !important;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    margin-top: 4px !important;
-    overflow-wrap: break-word !important;
-    position: relative !important;
-    text-align: center !important;
-    text-decoration-color: rgb(248, 248, 248) !important;
-    text-decoration-line: none !important;
-    text-decoration-style: solid !important;
-    text-decoration-thickness: auto !important;
-    text-shadow: rgba(0, 0, 0, 0) 0px 0px 0px !important;
-    text-transform: capitalize !important;
-    transition-behavior: normal, normal, normal, normal, normal, normal !important;
-    transition-delay: 0s, 0s, 0s, 0s, 0s, 0s !important;
-    transition-duration: 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s !important;
-    transition-property: background-color, border, border-radius, box-shadow, color, height !important;
-    transition-timing-function: ease, ease, ease, ease, ease, ease !important;
-    unicode-bidi: isolate !important;
-    width: 280px !important;
-    word-break: break-word !important;
-    -webkit-font-smoothing: antialiased !important;
-    margin: 4px auto 8px auto !important;
+    margin: 1rem auto !important;
+    width: auto !important;
+    max-width: calc(100% - 2rem) !important;
   }
   
   .menu-section {
@@ -485,29 +423,15 @@
     overflow-x: hidden;
   }
   
-  .row {
-    margin: 0;
-    width: 100%;
-  }
-  
-  .row .col-auto {
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
   .section-title {
     font-size: 40px !important;
-    height: 64px !important;
-    line-height: 40px !important;
-    width: 280px !important;
+    line-height: 1.2 !important;
+    max-width: 280px !important;
   }
   
   .subsection-title {
     font-size: 20px !important;
-    height: 48px !important;
-    line-height: 20px !important;
-    width: 240px !important;
+    line-height: 1.4 !important;
+    max-width: 240px !important;
   }
 }
