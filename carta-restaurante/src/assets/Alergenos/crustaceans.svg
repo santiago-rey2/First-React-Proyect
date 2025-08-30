@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 89.2 89.2" xml:space="preserve">
+<g>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="39.2" y1="13" x2="41.8" y2="25.2"></line>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="50.2" y1="13" x2="48.5" y2="25.6"></line>
+	
+		<polyline fill="none" stroke="#808181" stroke-width="1.9018" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="   66.6,41.3 60.6,45.4 54,45.4  "></polyline>
+	
+		<polyline fill="none" stroke="#808181" stroke-width="1.9018" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="   66.1,48.6 60.7,52.4 52.3,52.4  "></polyline>
+	
+		<polyline fill="none" stroke="#808181" stroke-width="1.9457" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="   23.3,41.3 29.6,45.4 36.5,45.4  "></polyline>
+	
+		<polyline fill="none" stroke="#808181" stroke-width="1.9457" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="   23.8,48.6 29.5,52.4 38.3,52.4  "></polyline>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="41.5" y1="67.5" x2="41.5" y2="57.4"></line>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="48.5" y1="57.6" x2="48.5" y2="67.1"></line>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="42.6" y1="59.2" x2="48.5" y2="59.2"></line>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="42.6" y1="63.9" x2="48.5" y2="63.9"></line>
+	
+		<ellipse fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="45.3" cy="40.6" rx="8.9" ry="15.9"></ellipse>
+	<path fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="   M45.8,68.6c0,0,7.3,0.8,7.4,6.3c0,0,0.3,2.9-5.5,2.4l-2.9-0.3L42,77.4c-5.8,0.5-5.5-2.4-5.5-2.4c0.1-5.5,7.4-6.3,7.4-6.3"></path>
+	<path fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="   M36,37.8c-11.3-0.2-9.7-12.1-9.7-12.1s-12.3-4-5.8-11.4c0,0,1.8-2.7,4.5-3l0.8,6.9l6.7-0.4c0,0,1.6,3.8-4.2,7.6"></path>
+	
+		<path fill="none" stroke="#808181" stroke-width="1.9848" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="   M54,37.8c11.1-0.2,9.5-12.1,9.5-12.1s12.1-4,5.8-11.4c0,0-1.8-2.7-4.5-3l-0.7,6.9l-6.6-0.4c0,0-1.6,3.8,4.2,7.6"></path>
+	<path fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="   M44.3,27.6c0,0-4.9,3-4.7,15.2"></path>
+</g>
+</svg>
