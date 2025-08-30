@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import DropdownMenu, { type DropdownItem } from '../DropdownMenu'
 import { useDropdownMenu } from '../DropdownMenu/useDropdownMenu'
-import './Header.css'
 import { Link } from 'react-router-dom'
 import { Translations } from '../../utils/Translations'
+import logo from '/logo.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -50,7 +50,7 @@ const Header = () => {
       <div className="header-container">
         <div className="logo">
           <img 
-            src="https://asador-a-ferreira.es/wp-content/uploads/2025/04/Logo_Header_Recortada_sin_Fondo.png" 
+            src={logo} 
             alt="Asador A Ferreira" 
             className="logo-image"
           />

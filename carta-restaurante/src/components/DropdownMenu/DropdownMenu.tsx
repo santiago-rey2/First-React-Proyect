@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import './DropdownMenu.css'
 import Flag from './FlagIcons'
 
 export interface DropdownItem {
@@ -33,6 +32,10 @@ const DropdownMenu = ({
     }
     if (onClose) {
       onClose()
+    }
+    if (href.startsWith('#')) {
+      const el = document.getElementById(href.replace('#', ''));
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   }
 

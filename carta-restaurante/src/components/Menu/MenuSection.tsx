@@ -1,5 +1,5 @@
 import MenuItem from './MenuItem'
-import './MenuSection.css'
+import { Translations } from '../../utils/Translations'
 
 interface MenuItemData {
   name: string
@@ -22,11 +22,46 @@ interface MenuSectionProps {
 }
 
 const MenuSection = ({ title, items, isSpecial = false, note, dividerImage }: MenuSectionProps) => {
+  const translations = Translations()
+  
   // Crear ID único basado en el título
   const sectionId = title.toLowerCase()
     .replace(/\s+/g, '-')
     .replace(/[^a-z0-9-]/g, '')
     .replace(/^-+|-+$/g, '');
+
+  // Mapear nombres de subsecciones a las traducciones ya existentes
+  const getSubsectionTranslation = (categoryName: string): string => {
+    // Normalizar el nombre para hacer coincidencias más robustas
+    const normalizedName = categoryName.toLowerCase().trim()
+    
+    // Mapeo usando las traducciones ya definidas en Translations.ts
+    const categoryMap: { [key: string]: string } = {
+      // Para Menú - Sugerencias del Día
+      'entrantes': translations.SECTION_SUGGESTIONS_STARTERS,
+      'platos principales': translations.SECTION_SUGGESTIONS_MAIN,
+      'postres': translations.SECTION_SUGGESTIONS_DESSERTS,
+      
+      // Si necesitas más subsecciones para otras páginas, las puedes agregar aquí
+      // usando las traducciones que ya tienes en Translations.ts
+    }
+    
+    // Buscar coincidencia exacta primero
+    if (categoryMap[normalizedName]) {
+      return categoryMap[normalizedName]
+    }
+    
+    // Buscar coincidencias parciales
+    for (const [key, translation] of Object.entries(categoryMap)) {
+      if (normalizedName.includes(key) || key.includes(normalizedName)) {
+        return translation
+      }
+    }
+    
+    // Si no hay coincidencia, devolver el nombre original
+    console.warn(`No translation found for subsection: ${categoryName}`)
+    return categoryName
+  }
 
   const renderItems = () => {
     if (!items || items.length === 0) return null
@@ -35,7 +70,9 @@ const MenuSection = ({ title, items, isSpecial = false, note, dividerImage }: Me
     if (isSpecial && Array.isArray(items) && items.length > 0 && 'category' in items[0]) {
       return (items as MenuSectionData[]).map((section, index) => (
         <div key={index} className="menu-subsection mb-4">
-          <h4 className="subsection-title">{section.category}</h4>
+          <h4 className="subsection-title">
+            {getSubsectionTranslation(section.category)}
+          </h4>
           <div className="row g-4 justify-content-center">
             {section.items.map((item, itemIndex) => (
               <div key={itemIndex} className="col-auto">
@@ -91,7 +128,8 @@ const MenuSection = ({ title, items, isSpecial = false, note, dividerImage }: Me
             
             {/* Título para secciones sin imagen */}
             {!dividerImage && (
-              <h2 className="section-title">{title}</h2>
+              <><h2 className="section-title mobile-only">{title}</h2>
+              <h2 className="section-title desktop-only">{title}</h2></>
             )}
           </div>
           

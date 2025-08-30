@@ -1,5 +1,13 @@
 import { AllergenGuide, Footer, Header, MenuSection, ScrollToTop } from "../components";
 import { Translations } from "../utils/Translations";
+import starters from '../assets/Media/Entrante.jpg'
+import seafood from '../assets/Media/Mariscos.jpg'
+import salads from '../assets/Media/Ensaladas.jpg'
+import meats from '../assets/Media/steak-tomahawk.webp'
+import desserts from '../assets/Media/pavlova-dessert.webp'
+import rice from '../assets/Media/Arroces.jpg'
+import fish from '../assets/Media/Pescado.jpg'
+import restuarant from '../assets/Media/interior-view.webp'
 
 // Datos del menú
 const menuData = {
@@ -219,7 +227,7 @@ const menuData = {
   ],
   carnes: [
     { name: "Churrasco de Cerdo", price: "12,00 €", allergens: ["sulfites"] },
-    { name: "Churrasco de Ternera", price: "12,80 €", allergens: [] },
+    { name: "Churrasco de Ternera", price: "12,80 €",description:" ", allergens: [] },
     { name: "Pincho Moruno", price: "4,50 €", allergens: ["sulfites"] },
     {
       name: "Parrillada de Carne (2 Personas)",
@@ -410,41 +418,41 @@ const MenuPage = () => {
             <MenuSection
             title={Translations().SECTION_STARTERS}
             items={menuData.entrantes}
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={starters}
             />
             <MenuSection
             title={Translations().SECTION_SALADS}
             items={menuData.ensaladas}
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={salads}
             />
             <MenuSection
             title={Translations().SECTION_SEAFOOD}
             items={menuData.mariscos}
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={seafood}
             />
             <MenuSection
             title={Translations().SECTION_MEATS}
             items={menuData.carnes}
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={meats}
             />
             <MenuSection
             title={Translations().SECTION_FISH}
             items={menuData.pescados}
             note="Todos los pescados pueden ser elaborados al horno"
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={fish}
             />
             <MenuSection
             title={Translations().SECTION_RICE}
             items={menuData.arroces}
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={rice}
             />
             <MenuSection
             title={Translations().SECTION_DESSERTS}
             items={menuData.postres}
-            dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
+            dividerImage={desserts}
             />
 
-            <AllergenGuide />
+            <AllergenGuide dividerImage={restuarant} />
         </main>
         <Footer />
         <ScrollToTop />

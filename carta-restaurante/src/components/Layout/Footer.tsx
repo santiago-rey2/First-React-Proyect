@@ -1,8 +1,7 @@
-import './Footer.css'
-
 const Footer = () => {
   return (
     <footer className="footer">
+      <div className="footer-divider"></div>
       <div className="footer-container">
         <div className="restaurant-info">
           <h3>Asador A Ferreira</h3>
@@ -10,8 +9,8 @@ const Footer = () => {
         </div>
         
         <div className="contact-info">
+          <h4>Contacto</h4>
           <div className="contact-item">
-            <span className="contact-icon">📞</span>
             <div>
               <p>(+34) 986691139</p>
               <p>(+34) 687264726</p>
@@ -19,7 +18,6 @@ const Footer = () => {
           </div>
           
           <div className="contact-item">
-            <span className="contact-icon">✉️</span>
             <p>angel10aferreira@hotmail.es</p>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import AllergenIcon from './AllergenIcon'
-import './MenuItem.css'
 
 interface MenuItemProps {
   item: {

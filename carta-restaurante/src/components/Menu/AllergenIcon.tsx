@@ -1,4 +1,3 @@
-import './AllergenIcon.css'
 import glutenSvg from '../../assets/Alergenos/gluten.svg'
 import celerySvg from '../../assets/Alergenos/celery.svg'
 import nutsSvg from '../../assets/Alergenos/nuts.svg'

@@ -1,7 +1,11 @@
 import AllergenIcon from './AllergenIcon'
-import './AllergenGuide.css'
 
-const AllergenGuide = () => {
+interface AllergenGuideProps {
+  dividerImage?: string
+  title?: string
+}
+
+const AllergenGuide = ({ dividerImage, title = "Guía Alérgenos" }: AllergenGuideProps) => {
   const allergens = [
     { type: 'gluten', name: 'Gluten' },
     { type: 'celery', name: 'Apio' },
@@ -20,10 +24,40 @@ const AllergenGuide = () => {
   ]
 
   return (
-    <section className="allergen-guide">
+    <section className="allergen-guide menu-section">
       <div className="container-fluid">
-        <div className="guide-container">
-          <h2 className="guide-title">Guía Alérgenos</h2>
+        <div className="guide-container section-container">
+          {/* Imagen divisoria para móvil */}
+          {dividerImage && (
+            <div className="divider-image mobile-only">
+              <img src={dividerImage} alt="Divisor de sección" />
+            </div>
+          )}
+          {/* Título para móvil */}
+          {dividerImage && (
+            <h2 className="section-title mobile-only">{title}</h2>
+          )}
+          {/* Contenedor con efecto hero para desktop/tablet */}
+          <div className="title-container">
+            {/* Imagen divisoria para desktop/tablet */}
+            {dividerImage && (
+              <div
+                className="divider-image desktop-only"
+                style={{
+                  backgroundImage: `url(${dividerImage})`
+                }}
+              >
+                <h2 className="section-title desktop-only">{title}</h2>
+              </div>
+            )}
+            {/* Título para secciones sin imagen */}
+            {!dividerImage && (
+              <>
+                <h2 className="section-title mobile-only">{title}</h2>
+                <h2 className="section-title desktop-only">{title}</h2>
+              </>
+            )}
+          </div>
           <div className="row">
             {allergens.map((allergen) => (
               <div key={allergen.type} className="col">
