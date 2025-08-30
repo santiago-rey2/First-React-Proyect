@@ -1,4 +1,5 @@
 import { AllergenGuide, Footer, Header, MenuSection, ScrollToTop } from "../components";
+import { Translations } from "../utils/Translations";
 
 // Datos del menú
 const menuData = {
@@ -397,48 +398,48 @@ const MenuPage = () => {
         <section className="hero-section">
             <Header />
             <div className="menu-intro">
-                <h1>NUESTROS PLATOS</h1>
+                <h1>{Translations().MENU_HEADER_TITLE}</h1>
             </div>
         </section>
         <main className="main-content">
             <MenuSection
-            title="Sugerencias Del Día"
+            title={Translations().SECTION_SUGGESTIONS_TITLE}
             items={menuData.sugerencias}
             isSpecial={true}
             />
             <MenuSection
-            title="Entrantes"
+            title={Translations().SECTION_STARTERS}
             items={menuData.entrantes}
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />
             <MenuSection
-            title="Ensaladas"
+            title={Translations().SECTION_SALADS}
             items={menuData.ensaladas}
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />
             <MenuSection
-            title="Mariscos"
+            title={Translations().SECTION_SEAFOOD}
             items={menuData.mariscos}
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />
             <MenuSection
-            title="CARNES"
+            title={Translations().SECTION_MEATS}
             items={menuData.carnes}
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />
             <MenuSection
-            title="PESCADOS"
+            title={Translations().SECTION_FISH}
             items={menuData.pescados}
             note="Todos los pescados pueden ser elaborados al horno"
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />
             <MenuSection
-            title="ARROCES"
+            title={Translations().SECTION_RICE}
             items={menuData.arroces}
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />
             <MenuSection
-            title="Postres Caseros"
+            title={Translations().SECTION_DESSERTS}
             items={menuData.postres}
             dividerImage="https://asador-a-ferreira.es/wp-content/uploads/2025/02/about-hero.webp"
             />

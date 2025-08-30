@@ -1,0 +1,39 @@
+{
+    "menuHeader": {
+        "title": "Nuestros Platos",
+        "navigation" : {
+            "home":"Nuestros Platos",
+            "wines":"Nuestros Vinos",
+            "language":"Español",
+            "flag": "es"
+        }
+    },
+    "sections":{
+        "suggestions":{
+            "title":"Sugerencias del Día",
+            "subsections":{
+                "starters":"Entrantes",
+                "main":"Plato Principal",
+                "desserts":"Postres"
+            }
+        },
+        "starters":"Entrantes",
+        "salads":"Ensaladas",
+        "meats":"Carnes",
+        "fish":"Pescados",
+        "seafood":"Mariscos",
+        "rice":"Arroces",
+        "desserts":"Postres Caseros",
+        "allergens":"Guía de Alérgenos"
+    },
+    "footer": {
+        "contact": "Contacto",
+        "localName": "Nombre del Restaurante",
+        "address": "Calle Falsa 123, Ciudad, País",
+        "phone": "Teléfono: +34 123 456 789",
+        "landline": "Teléfono Fijo: +34 987 654 321",
+        "email": "email@restaurante.com",
+        "website": "www.restaurante.com",
+        "opening hours": "Horario de Apertura"
+    }
+}

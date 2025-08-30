@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './DropdownMenu.css'
 import Flag from './FlagIcons'
 
@@ -48,14 +49,14 @@ const DropdownMenu = ({
       </button>
       <div className={`dropdown-menu ${isActive ? 'show' : ''}`}>
         {items.map((item, index) => (
-          <a 
+          <Link 
             key={index}
-            href={item.href} 
+            to={item.href} 
             onClick={() => handleItemClick(item.href)}
           >
             {item.flagCode && <Flag country={item.flagCode} className="flag-icon-menu" />}
             {item.label}
-          </a>
+          </Link>
         ))}
       </div>
     </li>

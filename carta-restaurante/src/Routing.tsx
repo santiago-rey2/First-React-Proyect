@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Admin, Home,MenuPage, WinesPage } from './Pages'
+import { Admin, Home,MenuPage, NotFound, WinesPage } from './Pages'
 
 const Routing = () => {
   return (
@@ -9,6 +9,7 @@ const Routing = () => {
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/wines" element={<WinesPage />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   )

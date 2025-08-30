@@ -2,6 +2,8 @@ import { useState } from 'react'
 import DropdownMenu, { type DropdownItem } from '../DropdownMenu'
 import { useDropdownMenu } from '../DropdownMenu/useDropdownMenu'
 import './Header.css'
+import { Link } from 'react-router-dom'
+import { Translations } from '../../utils/Translations'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -9,6 +11,7 @@ const Header = () => {
 
   // Datos de los menús desplegables
   const platosItems: DropdownItem[] = [
+    { href: "/menu", label: "Menú" },
     { href: "#sugerencias-del-dia", label: "Sugerencias del Día" },
     { href: "#entrantes", label: "Entrantes" },
     { href: "#ensaladas", label: "Ensaladas" },
@@ -20,7 +23,7 @@ const Header = () => {
   ]
 
   const vinosItems: DropdownItem[] = [
-    { href: "#tintos", label: "Vinos Tintos" },
+    { href: "/wines", label: "Vinos" },
     { href: "#blancos", label: "Vinos Blancos" },
     { href: "#rosados", label: "Vinos Rosados" },
     { href: "#espumosos", label: "Espumosos" },
@@ -57,22 +60,22 @@ const Header = () => {
         <nav className="navigation desktop-nav" onMouseLeave={closeDropdown}>
           <ul>
             <DropdownMenu
-              title="NUESTROS PLATOS"
+              title={Translations().NAVIGATION_HOME}
               items={platosItems}
               isActive={isDropdownActive('platos')}
               onToggle={() => handleDropdownToggle('platos')}
               onClose={closeDropdown}
             />
             <DropdownMenu
-              title="NUESTROS VINOS"
+              title={Translations().NAVIGATION_WINES}
               items={vinosItems}
               isActive={isDropdownActive('vinos')}
               onToggle={() => handleDropdownToggle('vinos')}
               onClose={closeDropdown}
             />
             <DropdownMenu
-              title="ESPAÑOL"
-              titleFlagCode="es"
+              title={Translations().NAVIGATION_LANGUAGE}
+              titleFlagCode={Translations().NAVIGATION_LANGUAGE_FLAG}
               items={idiomaItems}
               isActive={isDropdownActive('idioma')}
               onToggle={() => handleDropdownToggle('idioma')}
@@ -97,6 +100,7 @@ const Header = () => {
             <button className="close-menu" onClick={closeMenu}>×</button>
             <nav className="mobile-navigation">
               <ul>
+                <li><a href="/menu" onClick={closeMenu}>Menú</a></li>
                 <li><a href="#sugerencias-del-dia" onClick={closeMenu}>Sugerencias del Día</a></li>
                 <li><a href="#entrantes" onClick={closeMenu}>Entrantes</a></li>
                 <li><a href="#ensaladas" onClick={closeMenu}>Ensaladas</a></li>
@@ -106,7 +110,7 @@ const Header = () => {
                 <li><a href="#arroces" onClick={closeMenu}>Arroces</a></li>
                 <li><a href="#postres-caseros" onClick={closeMenu}>Postres</a></li>
                 <li className="menu-divider"></li>
-                <li><a href="#vinos" onClick={closeMenu}>Nuestros Vinos</a></li>
+                <li><Link to="/wines" onClick={closeMenu}>Nuestros Vinos</Link></li>
                 <li><a href="#idioma" onClick={closeMenu}>Idioma</a></li>
               </ul>
             </nav>
