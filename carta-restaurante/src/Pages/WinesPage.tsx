@@ -1,4 +1,4 @@
-import { Footer, Header, MenuSection } from "../components";
+import { Footer, Header, MenuSection, WinesItem } from "../components";
 import { useQuery } from "@tanstack/react-query";
 import { fetchVinos, type Vino } from "../models";
 
@@ -8,8 +8,6 @@ const WinesPage = () => {
     queryFn: fetchVinos,
   });
 
-  // Si el componente MenuSection espera ciertas claves, puedes transformar aquí:
-  // const items = (data ?? []).map(v => ({ ...v, nombre: v.nombre, precio: v.precio }));
   const items = data ?? [];
 
   return (
@@ -17,7 +15,7 @@ const WinesPage = () => {
       <section className="hero-section">
         <Header />
         <div className="menu-intro">
-          <h1>VINOS</h1>
+          <h1>NUESTROS VINOS</h1>
         </div>
       </section>
 
@@ -28,19 +26,13 @@ const WinesPage = () => {
           <MenuSection
             title="Vinos"
             items={items}
-            isSpecial={false}
-            note={undefined}
-            dividerImage={undefined}
+            renderItem={(vino) => <WinesItem item={vino} />}
           />
         )}
 
         {!isLoading && !error && items.length === 0 && (
           <p>No hay vinos disponibles.</p>
         )}
-
-        {/* Debug opcional: 
-        <pre style={{ fontSize: ".7rem", opacity: .6 }}>{JSON.stringify(items, null, 2)}</pre>
-        */}
       </main>
 
       <Footer />

@@ -131,9 +131,21 @@ const translations = Translations(); // <-- SIEMPRE aquí, nunca dentro de if, l
             key={section.key}
             title={section.title}
             items={section.items}
-            isSpecial={section.isSpecial}
+            //isSpecial={section.isSpecial}
             note={section.note}
             dividerImage={idx === 0 ? undefined : section.dividerImage}
+            renderItem={(plato) => (
+              <div className="menu-item">
+                <div style={{ display: "flex", justifyContent: "space-between" }}>
+                  <span>{plato.nombre}</span>
+                  <span>{plato.precio} €</span>
+                </div>
+                <div style={{ fontSize: "0.85em", color: "#666" }}>
+                  <span><b>Categoría:</b> {plato.categoria.nombre}</span>
+                  {plato.descripcion && <span> &nbsp; <b>Descripción:</b> {plato.descripcion}</span>}
+                </div>
+              </div>
+            )}
           />
         ))}
         <AllergenGuide dividerImage={restuarant} />
