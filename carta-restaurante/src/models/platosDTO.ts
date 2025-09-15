@@ -27,7 +27,8 @@ export type Plato = z.infer<typeof PlatoSchema>;
 export const Platos = z.array(PlatoSchema);
 
 export async function fetchPlatos(): Promise<Plato[]> {
-  const response = await fetch("http://127.0.0.1:8000/api/v1/public/platos");
+  const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  const response = await fetch(`${baseUrl}/public/platos`);
   const data = await response.json();
   console.log("Fetched platos:", data); 
   const platosArray = Array.isArray(data) ? data : data.platos || data.data;
