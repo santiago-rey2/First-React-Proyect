@@ -1484,3 +1484,105 @@ button:focus-visible {
 .scroll-to-top.visible {
   animation: slideInUp 0.3s ease-out, pulse 2s infinite;
 }
+
+/* ========================================
+   Contenedor de subsecciones de vinos
+   ======================================== */
+
+.wine-subsection-wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.wine-subsection {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.subsection-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color--theme-5);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Grid de 2 columnas para los vinos */
+.wines-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Anular el grid de MenuSection para WinesPage */
+.wines-page .menu-items-grid,
+.wines-page .row.g-4.justify-content-center {
+  display: block !important;
+  grid-template-columns: none !important;
+}
+
+.wines-page .menu-items-grid li,
+.wines-page .row.g-4.justify-content-center .col-auto {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* Estilos para denominaciones de vinos */
+.wine-denomination-block {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.denomination-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Grid de 2 columnas SOLO para los vinos */
+.wines-two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Para tablets y desktop - 2 columnas para vinos */
+@media (min-width: 768px) {
+  .wines-two-column-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+/* Para tablets y pantallas medianas - 2 columnas */
+@media (min-width: 768px) {
+  .wines-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Para pantallas muy grandes - mantener máximo 2 columnas */
+@media (min-width: 1200px) {
+  .wines-grid {
+    max-width: 1000px;
+    margin: 1rem auto 0;
+  }
+}

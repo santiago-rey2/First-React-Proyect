@@ -1,14 +1,16 @@
-import { Footer, Header, MenuSection, WinesItem } from "../components";
+import { Footer, Header, MenuSection, ScrollToTop, WinesItem } from "../components";
 import { useQuery } from "@tanstack/react-query";
-import { fetchVinos, type Vino } from "../models";
+import { fetchVinos, type Vino, type VinosPorCategoria } from "../models";
 
 const WinesPage = () => {
-  const { data, error, isLoading } = useQuery<Vino[]>({
+  const { data:vinos, error, isLoading } = useQuery<VinosPorCategoria>({
     queryKey: ["wines"],
     queryFn: fetchVinos,
   });
 
-  const items = data ?? [];
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error loading menu data: {error.message}</div>;
+  if (!vinos) return <div>No menu data available.</div>;
 
   return (
     <div className="wines-page">
@@ -20,22 +22,30 @@ const WinesPage = () => {
       </section>
 
       <main className="main-content">
-        {isLoading && <p>Cargando vinos...</p>}
-        {error && <p>Error: {(error as Error).message}</p>}
-        {!isLoading && !error && items.length > 0 && (
-          <MenuSection
-            title="Vinos"
-            items={items}
-            renderItem={(vino) => <WinesItem item={vino} />}
+        {Object.entries(vinos.vinos).map(([categoria, denominacionesObj]) => (
+          <MenuSection<[string, Vino[]]>
+            key={categoria}
+            title={categoria}
+            items={Object.entries(denominacionesObj)}
+            renderItem={([denominacion, vinos]: [string, Vino[]]) => (
+              <div key={denominacion} className="wine-denomination-block">
+                <h3 className="subsection-title">{denominacion}</h3>
+                <div className="wines-two-column-grid">
+                  {vinos.map((vino) => (
+                    <WinesItem
+                      key={vino.id}
+                      item={vino}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
           />
-        )}
-
-        {!isLoading && !error && items.length === 0 && (
-          <p>No hay vinos disponibles.</p>
-        )}
+        ))}
       </main>
 
       <Footer />
+      <ScrollToTop/>
     </div>
   );
 };

@@ -30,6 +30,5 @@ export async function fetchPlatos(): Promise<Menu> {
     throw new Error("Error al validar los datos del menú");
   }
 
-  console.log("✅ Menú validado:", parsed.data);
   return parsed.data; // Devuelve la misma estructura que el backend
 }
