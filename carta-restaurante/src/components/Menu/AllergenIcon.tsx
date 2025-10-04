@@ -1,4 +1,17 @@
-import './AllergenIcon.css'
+import glutenSvg from '../../assets/Alergenos/gluten.svg'
+import celerySvg from '../../assets/Alergenos/celery.svg'
+import nutsSvg from '../../assets/Alergenos/nuts.svg'
+import sesameSvg from '../../assets/Alergenos/sesame.svg'
+import peanutSvg from '../../assets/Alergenos/peanut.svg'
+import milkSvg from '../../assets/Alergenos/milk.svg'
+import fishSvg from '../../assets/Alergenos/fish.svg'
+import shellfishSvg from '../../assets/Alergenos/shellfish.svg'
+import crustaceansSvg from '../../assets/Alergenos/crustaceans.svg'
+import eggSvg from '../../assets/Alergenos/egg.svg'
+import soySvg from '../../assets/Alergenos/soy.svg'
+import lupinsSvg from '../../assets/Alergenos/lupins.svg'
+import mustardSvg from '../../assets/Alergenos/mustard.svg'
+import sulfitesSvg from '../../assets/Alergenos/sulfites.svg'
 
 interface AllergenIconProps {
   type: string
@@ -7,59 +20,59 @@ interface AllergenIconProps {
 const allergenData: { [key: string]: { name: string; svgUrl: string } } = {
   gluten: { 
     name: 'Gluten', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/gluten.svg' 
+    svgUrl: glutenSvg 
   },
   celery: { 
     name: 'Apio', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/celery.svg' 
+    svgUrl: celerySvg 
   },
   nuts: { 
     name: 'Frutos con Cáscara', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/nuts.svg' 
+    svgUrl: nutsSvg 
   },
   sesame: { 
     name: 'Sésamo', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/sesame.svg' 
+    svgUrl: sesameSvg 
   },
   peanut: { 
     name: 'Cacahuete', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/peanut.svg' 
+    svgUrl: peanutSvg 
   },
   milk: { 
     name: 'Lácteos', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/milk.svg' 
+    svgUrl: milkSvg 
   },
   fish: { 
     name: 'Pescado', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/fish.svg' 
+    svgUrl: fishSvg 
   },
   shellfish: { 
     name: 'Molusco', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/shellfish.svg' 
+    svgUrl: shellfishSvg 
   },
   crustaceans: { 
     name: 'Crustáceo', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/crustaceans.svg' 
+    svgUrl: crustaceansSvg 
   },
   egg: { 
     name: 'Huevo', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/egg.svg' 
+    svgUrl: eggSvg 
   },
   soy: { 
     name: 'Soja', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/soy.svg' 
+    svgUrl: soySvg 
   },
   lupins: { 
     name: 'Altramuces', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/lupins.svg' 
+    svgUrl: lupinsSvg 
   },
   mustard: { 
     name: 'Mostaza', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/mustard.svg' 
+    svgUrl: mustardSvg 
   },
   sulfites: { 
     name: 'Sulfitos', 
-    svgUrl: 'https://asador-a-ferreira.es/wp-content/uploads/2025/02/sulfites.svg' 
+    svgUrl: sulfitesSvg 
   }
 }
 

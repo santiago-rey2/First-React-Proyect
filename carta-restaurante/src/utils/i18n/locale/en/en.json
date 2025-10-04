@@ -1,0 +1,39 @@
+{
+    "menuHeader": {
+        "title": "Our Dishes",
+        "navigation" : {
+            "home":"Our Dishes",
+            "wines":"Our Wines",
+            "language":"English",
+            "flag": "en"
+        }
+    },
+    "sections":{
+        "suggestions":{
+            "title":"Suggestions of the day",
+            "subsections":{
+                "starters":"Appetizers",
+                "main":"Main Course",
+                "desserts":"Desserts"
+            }
+        },
+        "starters":"Appetizers",
+        "salads":"Salads",
+        "meats":"Meats",
+        "fish":"Fish",
+        "seafood":"Seafood",
+        "rice":"Rice",
+        "desserts":"Homemade Desserts",
+        "allergens":"Allergen Guide"
+    },
+    "footer": {
+        "contact": "Contact",
+        "localName": "Restaurant Name",
+        "address": "123 Fake St, City, Country",
+        "phone": "Phone: +34 123 456 789",
+        "landline": "Landline: +34 987 654 321",
+        "email": "email@restaurant.com",
+        "website": "www.restaurant.com",
+        "opening hours": "Opening Hours"
+    }
+}

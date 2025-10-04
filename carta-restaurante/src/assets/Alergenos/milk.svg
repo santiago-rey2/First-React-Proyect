@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 89.2 89.2" xml:space="preserve">
+<g>
+	
+		<rect x="16.7" y="37.9" transform="matrix(1.523329e-02 -0.9999 0.9999 1.523329e-02 -11.2177 88.749)" fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="45.5" height="24.3"></rect>
+	
+		<polygon fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="   59.4,20.3 62.7,25.5 62.1,68.9 51.3,73 51.9,27.5  "></polygon>
+	
+		<polygon fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="   34.9,19.9 27.6,27.1 51.9,27.5 59.4,20.3  "></polygon>
+	
+		<rect x="45" y="5.7" transform="matrix(1.523329e-02 -0.9999 0.9999 1.523329e-02 28.5313 64.8705)" fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="4.3" height="24.5"></rect>
+	
+		<rect x="29.9" y="34.5" transform="matrix(0.9999 1.523329e-02 -1.523329e-02 0.9999 0.6751 -0.5952)" fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="19.1" height="19.1"></rect>
+	
+		<line fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" x1="29.7" y1="57.3" x2="48.7" y2="57.6"></line>
+	
+		<ellipse transform="matrix(0.9844 -0.1758 0.1758 0.9844 -3.5405 7.8853)" fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="42.7" cy="23.9" rx="2.6" ry="1.6"></ellipse>
+	<path fill="none" stroke="#808181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="   M43,45.6c0,2-1.7,3.6-3.7,3.6c-2,0-3.6-1.7-3.6-3.7s3.7-6.6,3.7-6.6S43,43.6,43,45.6z"></path>
+</g>
+</svg>
