@@ -1,40 +1,35 @@
 import { z } from "zod";
 
-// Subesquema para la categoría
-const CategoriaSchema = z.object({
-  nombre: z.string(),
-  id: z.number(),
-});
-
-const AlergenosSchema = z.object({
-  nombre: z.string(),
-  id: z.number(),
-});
-
-// Esquema principal para el plato
+// Esquema base de cada plato
 export const PlatoSchema = z.object({
-  nombre: z.string(),
-  precio: z.string(),  // lo recibes como string "22.00"
-  descripcion: z.string(),
-  categoria_id: z.number(),
   id: z.number(),
-  categoria: CategoriaSchema,
-  alergenos: z.array(AlergenosSchema)
+  nombre: z.string(),
+  descripcion: z.string(),
+  precio: z.number(),
+  alergenos: z.array(z.string()),
 });
 
-// Tipo de TypeScript inferido automáticamente
 export type Plato = z.infer<typeof PlatoSchema>;
-export const Platos = z.array(PlatoSchema);
 
-export async function fetchPlatos(): Promise<Plato[]> {
+// Esquema principal que valida el objeto tal cual llega del API
+export const MenuSchema = z.object({
+  platos: z.record(z.string(), z.array(PlatoSchema)),
+});
+
+export type Menu = z.infer<typeof MenuSchema>;
+
+// Función de fetch con parseo pero SIN cambiar la estructura
+export async function fetchPlatos(): Promise<Menu> {
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
   const response = await fetch(`${baseUrl}/public/platos`);
   const data = await response.json();
-  console.log("Fetched platos:", data); 
-  const platosArray = Array.isArray(data) ? data : data.platos || data.data;
-  const parsed = Platos.safeParse(platosArray);
+
+  const parsed = MenuSchema.safeParse(data);
   if (!parsed.success) {
-    throw new Error("Error al obtener los Platos: " + parsed.error);
+    console.error("❌ Error de validación:", parsed.error);
+    throw new Error("Error al validar los datos del menú");
   }
-  return parsed.data;
+
+  console.log("✅ Menú validado:", parsed.data);
+  return parsed.data; // Devuelve la misma estructura que el backend
 }

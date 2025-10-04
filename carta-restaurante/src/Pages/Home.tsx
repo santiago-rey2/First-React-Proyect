@@ -1,10 +1,8 @@
+import { Navigate } from "react-router-dom";
+
 const Home = () => {
-  return (
-    <div>
-      <h1>Welcome to Our Restaurant</h1>
-      <p>Discover our delicious menu and enjoy a great dining experience.</p>
-    </div>
-  );
+  // Demomento se redirige a /menu pero en un futuro se puede hacer una página de bienvenida
+  return (<Navigate to="/menu" replace />);
 };
 
 export default Home;

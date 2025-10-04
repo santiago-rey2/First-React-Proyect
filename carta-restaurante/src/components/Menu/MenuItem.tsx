@@ -6,11 +6,13 @@ interface MenuItemProps {
 }
 
 const MenuItem = ({ item }: MenuItemProps) => {
+
+  console.log("Alergenos del plato:", item.alergenos);
   return (
     <div className="menu-item">
       <div className="item-header">
         <h6 className="item-name">{item.nombre}</h6>
-        <span className="item-price">{item.precio}</span>
+        <span className="item-price">{item.precio.toFixed(2)} €</span>
       </div>
       
       {/* Una sola línea decorativa que siempre aparece */}
@@ -23,7 +25,7 @@ const MenuItem = ({ item }: MenuItemProps) => {
       {item.alergenos && item.alergenos.length > 0 && (
         <div className="allergen-icons">
           {item.alergenos.map((alergenos, index) => (
-            <AllergenIcon key={index} type={alergenos.nombre} />
+            <AllergenIcon key={index} type={alergenos} />
           ))}
         </div>
       )}
