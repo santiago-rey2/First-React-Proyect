@@ -4,10 +4,11 @@ import { z } from "zod";
 const VinoSchema = z.object({
   id: z.number(),
   nombre: z.string(),
-  precio: z.number(), // O z.number() si lo conviertes en backend
-  bodega: z.string().nullable(), // puede ser null
-  uvas: z.array(z.string()).nullable(), // puede ser null o array de strings
-  enologo: z.string().nullable() // puede ser null
+  precio: z.number(),
+  precio_unidad: z.string().nullable(),
+  bodega: z.string().nullable(),
+  uvas: z.array(z.string()).nullable(),
+  enologo: z.string().nullable() 
 });
 
 export type Vino = z.infer<typeof VinoSchema>;

@@ -886,8 +886,10 @@ button:focus-visible {
   font-size: 20px; 
   font-weight: 600; 
   color: var(--color--theme-0);
-  white-space: nowrap;
+  white-space: wrap;
   flex-shrink: 0;
+  max-width: 150px;
+  text-align: right;
 }
 
 .decorative-line {

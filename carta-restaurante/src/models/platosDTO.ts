@@ -6,6 +6,7 @@ export const PlatoSchema = z.object({
   nombre: z.string(),
   descripcion: z.string(),
   precio: z.number(),
+  precio_unidad: z.string().nullable(),
   alergenos: z.array(z.string()),
 });
 
