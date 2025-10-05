@@ -5,6 +5,8 @@ export interface DropdownItem {
   href: string
   label: string
   flagCode?: string
+  isLanguage?: boolean  // Nueva prop para identificar items de idioma
+  languageCode?: string // Código del idioma (es, en, pt)
 }
 
 export interface DropdownMenuProps {
@@ -15,6 +17,7 @@ export interface DropdownMenuProps {
   onToggle?: () => void
   onClose?: () => void
   onItemClick?: (href: string) => void
+  onLanguageChange?: (languageCode: string) => void  // Nueva prop
 }
 
 const DropdownMenu = ({ 
@@ -24,17 +27,28 @@ const DropdownMenu = ({
   isActive = false, 
   onToggle, 
   onClose,
-  onItemClick 
+  onItemClick,
+  onLanguageChange
 }: DropdownMenuProps) => {
-  const handleItemClick = (href: string) => {
+  const handleItemClick = (item: DropdownItem) => {
+    // Si es un cambio de idioma
+    if (item.isLanguage && item.languageCode && onLanguageChange) {
+      onLanguageChange(item.languageCode)
+      if (onClose) onClose()
+      return
+    }
+
+    // Si es un enlace normal
     if (onItemClick) {
-      onItemClick(href)
+      onItemClick(item.href)
     }
     if (onClose) {
       onClose()
     }
-    if (href.startsWith('#')) {
-      const el = document.getElementById(href.replace('#', ''));
+    
+    // Si es un ancla, hacer scroll suave
+    if (item.href.startsWith('#')) {
+      const el = document.getElementById(item.href.replace('#', ''));
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
   }
@@ -52,14 +66,27 @@ const DropdownMenu = ({
       </button>
       <div className={`dropdown-menu ${isActive ? 'show' : ''}`}>
         {items.map((item, index) => (
-          <Link 
-            key={index}
-            to={item.href} 
-            onClick={() => handleItemClick(item.href)}
-          >
-            {item.flagCode && <Flag country={item.flagCode} className="flag-icon-menu" />}
-            {item.label}
-          </Link>
+          item.isLanguage ? (
+            // Para items de idioma, usar button en lugar de Link
+            <button
+              key={index}
+              className="dropdown-language-item"
+              onClick={() => handleItemClick(item)}
+            >
+              {item.flagCode && <Flag country={item.flagCode} className="flag-icon-menu" />}
+              {item.label}
+            </button>
+          ) : (
+            // Para enlaces normales, usar Link
+            <Link 
+              key={index}
+              to={item.href} 
+              onClick={() => handleItemClick(item)}
+            >
+              {item.flagCode && <Flag country={item.flagCode} className="flag-icon-menu" />}
+              {item.label}
+            </Link>
+          )
         ))}
       </div>
     </li>

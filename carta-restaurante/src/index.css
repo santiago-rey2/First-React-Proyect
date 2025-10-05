@@ -378,7 +378,6 @@ button:focus-visible {
   padding: 0.6rem 1.2rem;
   border-radius: 3px;
   letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1587,4 +1586,87 @@ button:focus-visible {
     max-width: 1000px;
     margin: 1rem auto 0;
   }
+}
+
+/* ========================================
+   BOTONES DE IDIOMA
+   ======================================== */
+
+/* Estilos para botones de idioma en dropdown - mismo estilo que los enlaces */
+.dropdown-language-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: var(--color--theme-0) !important;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 300;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-language-item:hover {
+  background-color: rgba(var(--primary-color-rgb), 0.1);
+}
+
+/* Estilos para botones de idioma en móvil - mismo estilo que los enlaces */
+.mobile-language-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color--theme-0);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 300;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.mobile-language-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color--theme-0);
+}
+
+.mobile-language-item:active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Asegurar que las banderas tengan el mismo tamaño */
+.flag-icon-mobile {
+  width: 24px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Si los botones están dentro del dropdown menu, heredar estilos */
+.dropdown-menu .dropdown-language-item {
+  color: inherit;
+}
+
+.dropdown-menu a,
+.dropdown-menu .dropdown-language-item {
+  /* Estilos comunes para enlaces y botones de idioma */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu .dropdown-language-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
