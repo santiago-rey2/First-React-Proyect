@@ -6,6 +6,7 @@ import { fetchPlatos, type Menu, type Plato } from "../models";
 import { ASSETS } from "../components/conf";
 import { useMemo } from "react";
 import { getLanguageNavigation, getWinesNavigation } from "../components/conf/Navigation_Configuration";
+import {WaveLoader} from "../components/UI";
 
 function useMenuData() {
   const { data, error, isLoading } = useQuery<Menu>({
@@ -46,6 +47,11 @@ const MenuPage = () => {
         items: menuItems
       },
       getWinesNavigation(translations.NAVIGATION_WINES), // ✅ Pasar traducciones como parámetro
+      {
+        key : 'alergenos',
+        title: translations.SECTION_ALLERGENS,
+        items: [{ href: "#allergens", label: translations.SECTION_ALLERGENS }]
+      },
       getLanguageNavigation(translations.NAVIGATION_LANGUAGE, translations.NAVIGATION_LANGUAGE_FLAG) // ✅ Pasar traducciones
     ];
   }, [menu, translations]); // ✅ Agregar translations a las dependencias
@@ -69,7 +75,7 @@ const MenuPage = () => {
     return imageMap[seccion.toLowerCase()];
   };
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <WaveLoader />;
   if (error) return <div>Error loading menu data: {error.message}</div>;
   if (!menu) return <div>No menu data available.</div>;
 

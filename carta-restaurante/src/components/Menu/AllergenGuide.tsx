@@ -24,7 +24,7 @@ const AllergenGuide = ({ dividerImage, title = "Guía Alérgenos" }: AllergenGui
   ]
 
   return (
-    <section className="allergen-guide menu-section">
+    <section id="allergens" className="allergen-guide menu-section">
       <div className="container-fluid">
         <div className="guide-container section-container">
           {/* Imagen divisoria para móvil */}

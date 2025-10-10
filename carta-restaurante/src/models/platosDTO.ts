@@ -22,6 +22,7 @@ export type Menu = z.infer<typeof MenuSchema>;
 // Función de fetch con parseo pero SIN cambiar la estructura
 export async function fetchPlatos(): Promise<Menu> {
   const baseUrl = import.meta.env.VITE_API_BASE_URL;
+  await new Promise(resolve => setTimeout(resolve, 1000)); // Simula un retraso de 1 segundo
   const response = await fetch(`${baseUrl}/public/platos`);
   const data = await response.json();
 

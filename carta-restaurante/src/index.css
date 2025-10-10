@@ -1670,3 +1670,42 @@ button:focus-visible {
 .dropdown-menu .dropdown-language-item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* ========================================
+    WAVE LOADER
+   ======================================== */
+  
+/* WaveLoader.css */
+.wave-loader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  height: 60px;
+}
+
+.bar {
+  width: 6px;
+  border-radius: 4px;
+  animation: wave 1s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.center-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;   /* ocupa toda la altura de la ventana */
+  background-color: var(--color--theme-4); /* opcional, solo para contraste */
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.4);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

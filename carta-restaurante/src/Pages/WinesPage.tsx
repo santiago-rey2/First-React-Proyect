@@ -5,6 +5,7 @@ import { fetchVinos, type Vino, type VinosPorCategoria } from "../models";
 import { useMemo } from "react";
 import { getLanguageNavigation } from "../components/conf/Navigation_Configuration";
 import { Translations } from "../utils/Translations";
+import {WaveLoader} from "../components/UI";
 
 const WinesPage = () => {
   const { data: vinos, error, isLoading } = useQuery<VinosPorCategoria>({
@@ -43,7 +44,7 @@ const WinesPage = () => {
     ];
   }, [vinos, translations]); // ✅ Agregar translations a las dependencias
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <WaveLoader />;
   if (error) return <div>Error loading menu data: {error.message}</div>;
   if (!vinos) return <div>No menu data available.</div>;
 
