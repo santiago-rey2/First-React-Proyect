@@ -1,25 +1,40 @@
 import { AllergenGuide, Footer, Header, MenuItem, MenuSection, ScrollToTop } from "../components";
 import type { NavigationConfig } from "../components/Layout/DesktopNavigation";
 import { Translations } from "../utils/Translations";
+import { getPreferredLanguage } from "../utils/GetLanguage";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPlatos, type Menu, type Plato } from "../models";
 import { ASSETS } from "../components/conf";
-import { useMemo } from "react";
+import { useMemo, useEffect } from "react";
 import { getLanguageNavigation, getWinesNavigation } from "../components/conf/Navigation_Configuration";
-import {WaveLoader} from "../components/UI";
+import { WaveLoader } from "../components/UI";
+import { useTranslation } from "react-i18next";
 
 function useMenuData() {
+  const { i18n } = useTranslation();
+  const language = i18n.language || getPreferredLanguage();
+  
   const { data, error, isLoading } = useQuery<Menu>({
-    queryKey: ["menuData"],
-    queryFn: fetchPlatos,
+    queryKey: ["menuData", language], // ✅ Incluir idioma en la key para cachear por idioma
+    queryFn: () => fetchPlatos(language),
+    staleTime: 5 * 60 * 1000, // Cache por 5 minutos
   });
 
-  return { data, error, isLoading };
+  return { data, error, isLoading, language };
 }
 
 const MenuPage = () => {
-  const { data: menu, error, isLoading } = useMenuData();
-  const translations = Translations(); // ✅ Llamar hooks al nivel superior
+  const { data: menu, error, isLoading} = useMenuData();
+  const translations = Translations();
+  const { i18n } = useTranslation();
+
+  // Sincronizar i18n con el idioma guardado al montar el componente
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('preferredLanguage');
+    if (savedLanguage && i18n.language !== savedLanguage) {
+      i18n.changeLanguage(savedLanguage);
+    }
+  }, [i18n]);
 
   // Generar navigation config dinámicamente basado en los platos
   const navigationConfig: NavigationConfig[] = useMemo(() => {
@@ -46,15 +61,15 @@ const MenuPage = () => {
         title: translations.NAVIGATION_HOME,
         items: menuItems
       },
-      getWinesNavigation(translations.NAVIGATION_WINES), // ✅ Pasar traducciones como parámetro
+      getWinesNavigation(translations.NAVIGATION_WINES),
       {
         key : 'alergenos',
         title: translations.SECTION_ALLERGENS,
         items: [{ href: "#allergens", label: translations.SECTION_ALLERGENS }]
       },
-      getLanguageNavigation(translations.NAVIGATION_LANGUAGE, translations.NAVIGATION_LANGUAGE_FLAG) // ✅ Pasar traducciones
+      getLanguageNavigation(translations.NAVIGATION_LANGUAGE, translations.NAVIGATION_LANGUAGE_FLAG)
     ];
-  }, [menu, translations]); // ✅ Agregar translations a las dependencias
+  }, [menu, translations]);
   
   const getSectionImage = (seccion: string, index: number, hasSugerencias: boolean): string | undefined => {
     if (index === 0 && !hasSugerencias) {
